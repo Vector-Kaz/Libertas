@@ -1,0 +1,18 @@
+<h2>Book List</h2>
+
+<!--Commenting out the first block to use the new block for reverse 
+
+
+    {% for book in object_list %}
+            <a href="{% url 'books:detail' book.id %}">
+                    {{book.title}}: {{book.writer}}
+            </a><br>
+    {% endfor %}
+-->
+
+<h2>Book List</h2>
+
+{% for book in object_list %}
+<a href="{{book.get_absolute_url}}">{{book.title}}</a><br>
+{% endfor %}
+
